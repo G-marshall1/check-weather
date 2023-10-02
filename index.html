@@ -18,80 +18,83 @@
         <section class="search-area col-lg-1">
             <div class="">
                 <h2>Search for a City:</h2>
-                <input class="w-100" type="text">
-                <button class="bg-primary text-white w-100">Search</button>
             </div>
+            <input id="search" type="text" class="form-control" placeholder="Salt Lake City" aria-describedby="inputGroup-sizing-sm" value="" onchange="searchHistory() , openPage()">
+          <button id="searchButton"  type="button" class="btn btn-primary w-100">Search</button>
             <!-- Empty div to add searched criteria -->
-             <div class="history">history</div> 
+             <div id="history"></div> 
         </section>
         <!-- current weather container -->
         <section class="current-weather text-lg-center"> 
-            <h2>City (date)</h2>
-            <div>
-                <h5>temp:</h5>
-                <h5>wind:</h5>
-                <h5>humidity:</h5>
+            <h2 id="currentDate"></h2>
+            <div id="0">
+              <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather">
+                <h5 id="currentTemp">temp:</h5>
+                <h5 id="currentWind">wind:</h5>
+                <h5 id="currentHum">humidity:</h5>
             </div>
         </section>
-        <!-- next 5 days smaller containers dynamically added with JS -->
+        <!-- next 5 days dynamically added with JS -->
         <section class="future-forecast">
             <h3>5-Day Forecast:</h3>
-            <div class="card-1 border-primary">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">date</h5>
-                  <img class="card-img-top" src="holder.js/100px180/" alt="fa-image">
-                  <p class="card-temp">temp:</p>
-                  <p class="card-wind">wind:</p>
-                  <p class="card-humidity">humidity:</p>
+            <div class="card-deck  w-100 h-100 ">
+                <div id="1" class="card  d-inline-block card-1">
+                  <div class="card-body">
+                    <h5 id="date1" class="card-title">Date</h5>
+                    <img id="imgFuture1" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather">
+                    <p id="temp1" class="card-text ">temp:</p>
+                      <p id="wind1" class="card-text">wind:</p>
+                      <p id="hum1" class="card-text">humidity:</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+                <div id="2" class="card   d-inline-block ">
+                  <div class="card-body">
+                    <h5 id="date2" class="card-title">Date</h5>
+                    <img id="imgFuture2" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather">
+                    <p  id="temp2" class="card-text cardTemp">temp:</p>
+                      <p id="wind2" class="card-text cardWind">wind:</p>
+                      <p id="hum2" class="card-text cardHum">humidity:</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+                <div id="3" class="card   d-inline-block ">
+                  <div class="card-body">
+                    <h5 id="date3" class="card-title">Date</h5>
+                    <img id="imgFuture3" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather">
+                    <p id="temp3" class="card-text">temp:</p>
+                      <p id="wind3" class="card-text">wind:</p>
+                      <p id="hum3" class="card-text">humidity:</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+                <div id="4" class="card   d-inline-block ">
+                    <div class="card-body">
+                      <h5 id="date4" class="card-title">Date</h5>
+                      <img id="imgFuture4" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather">
+                      <p id="temp4" class="card-text">temp:</p>
+                      <p id="wind4" class="card-text">wind:</p>
+                      <p id="hum4" class="card-text">humidity:</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                  <div id="5" class="card   d-inline-block ">
+                    <div class="card-body">
+                      <h5 id="date5" class="card-title">Date</h5>
+                      <img id="imgFuture5" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather">
+                      <p id="temp5" class="card-text">temp:</p>
+                      <p id="wind5" class="card-text">wind:</p>
+                      <p id="hum5" class="card-text">humidity:</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="card-2 border-primary">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">date</h5>
-                  <img class="card-img-top" src="fa-solid fa-cloud-showers-water" alt="fa-image">
-                  <p class="card-temp">temp:</p>
-                  <p class="card-wind">wind:</p>
-                  <p class="card-humidity">humidity:</p>
-                </div>
-              </div>
-            </div>
-            <div class="card-3 border-primary">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">date</h5>
-                  <img class="card-img-top" src="holder.js/100px180/" alt="fa-image">
-                  <p class="card-temp">temp:</p>
-                  <p class="card-wind">wind:</p>
-                  <p class="card-humidity">humidity:</p>
-                </div>
-              </div>
-            </div>
-            <div class="card-4 border-primary">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">date</h5>
-                  <img class="card-img-top" src="holder.js/100px180/" alt="fa-image">
-                  <p class="card-temp">temp:</p>
-                  <p class="card-wind">wind:</p>
-                  <p class="card-humidity">humidity:</p>
-                </div>
-              </div>
-            </div>
-            <div class="card-5 border-primary">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">date</h5>
-                  <img class="card-img-top" src="holder.js/100px180/" alt="fa-image">
-                  <p class="card-temp">temp:</p>
-                  <p class="card-wind">wind:</p>
-                  <p class="card-humidity">humidity:</p>
-                </div>
-              </div>
-            
-      
-</div>
         </section>
     </main>
     <!-- adding js and any library -->
-    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
