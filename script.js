@@ -1,15 +1,7 @@
 //connect weather api to allow search ability on click
 //843fa40ad68a96668befb0da86d9b44b, new key - 9e12af8fcc8a0d6205c7f203926a2756
 //When putting a city in the search bar I can click search to pull its local weather
-function openPage() {
-    var x =document.getElementById("search").ariaValueMax;
 
-    if (x === "city") {
-        window.open("/index.html");
-    } else {
-        console.error();
-    }
-}
 
 function searchHistory() {
     var recentSearch = []
@@ -55,11 +47,13 @@ function getFutureWeather() {
     for (var i =0; i<fiveDayForecast.length-1; i++) {
         let day = fiveDayForecast[i]
         console.log(`Date ${day.dt_txt}`)
-        document.getElementById(`date${i+1}`).innerHTML = `Date ${day.dt_txt}`
-        document.getElementById(`date${i+1}`).innerHTML = `Date ${day.dt_txt}`
-        document.getElementById(`temp${i+1}`).innerHTML = `temp ${day.main.temp} °F`
-        document.getElementById(`wind${i+1}`).innerHTML = `wind ${day.wind.speed}`
-        document.getElementById(`hum${i+1}`).innerHTML = `hum ${day.main.humidity}`
+        document.getElementById(`date${i+1}`).innerHTML = `Date: ${day.dt_txt}`
+        document.getElementById(`date${i+1}`).innerHTML = `Date: ${day.dt_txt}`
+        document.getElementById(`temp${i+1}`).innerHTML = `temp: ${day.main.temp} °F`
+        document.getElementById(`wind${i+1}`).innerHTML = `wind: ${day.wind.speed} mph`
+        document.getElementById(`hum${i+1}`).innerHTML = `humidity: ${day.main.humidity}`
+
+        // document.getElementById(`imgFuture1${i+1}`).innerHTML = ` ${day.weather[1].icon}`
     
     }
       
