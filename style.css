@@ -1,10 +1,10 @@
 * {
-    box-sizing: content-box;
+    box-sizing:border-box;
 }
 
 
 body {
-    background-color:aliceblue;
+    background-color:rgb(173, 196, 217);
 }
 
 #head-1 {
@@ -19,12 +19,8 @@ body {
     display: flex;
     position: absolute;
     margin-left: 2%;
-    flex-wrap:wrap
-}
-
-
-input {
-    
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 button {
@@ -38,7 +34,7 @@ button:hover {
     cursor: pointer;
 }
 
-.history {
+#history {
 text-align: center;
 width: 100%;
 height: 70rem;
@@ -48,41 +44,48 @@ margin-top: 10px;
 margin-inline-end: inherit;
 }
 
+#history>p {
+    border: 2px solid rgb(48, 106, 129);
+    background-color: gray;
+    color: rgb(4, 12, 247);
+    opacity: 55%;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: 700;
+    
+}
+
 .current-weather {
     display: flex;
     flex-direction: column;
     /* margin-right: 30%; */
-    border: 5px solid black;
+    border: 2px solid black;
     width: 70%;
-    height: 10rem;
     margin-left: 28%;
     place-items: start;
 }
 
+.current-weather>img {
+    height: 5px;
+}
+
 .future-forecast {
-     display: flex;
+     
     /* margin-right: 30%; */
-    border: 5px solid black;
-    width: 70%;
+    width: 75%;
     height: 35rem;
     margin-left: 28%;
     place-items: start;
 }
 
-.card-1 {
+.card {
     border: 3px solid;
+    width: 17.8%;
+    color: aliceblue;
+    background-image: linear-gradient(120deg, rgb(18, 186, 212), rgb(30, 10, 183));
 }
-.card-2 {
-    border: 3px solid;
-}
-.card-3 {
-    border: 3px solid;
-}
-.card-4 {
-    border: 3px solid;
-}
-.card-5 {
-    border: 3px solid;
-}
+
+
 
 
